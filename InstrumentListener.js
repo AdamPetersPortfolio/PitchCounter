@@ -10,7 +10,7 @@
 
 class InstrumentListener {
     constructor(instrument) {
-        this.pitchCounter = PitchCounter;
+        this.pitchCounter = new PitchCounter();
         this.get_pitch_count = function () {
             return this.pitchCounter.counter; };
         this.changeInstrument(instrument);
