@@ -22,7 +22,13 @@ class PitchCounterApp {
      * @param {instr} the String name of the instrument
      */
     change_instrument(instr) {
-        this.instrument.changeInstrument(instr)
+        if (this.stopped) {
+            this.changeState();
+        } else {
+            this.changeState();
+            this.instrument.changeInstrument(instr)
+            this..changeState();
+        }
     }
 
     /**
@@ -66,12 +72,5 @@ function ChangeState() {
 }
 
 function ChangeInstrument(instr) {
-    if (this.stopped) {
-        app.changeState();
-    }
-    else {
-        app.changeState();
-        app.change_instrument(instr);
-        app.changeState();
-    }
+    app.change_instrument(instr);
 }
