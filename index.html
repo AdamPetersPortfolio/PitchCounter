@@ -7,6 +7,13 @@
       <link rel="shortcut icon" href="#" />
     </head>
     <body>
+      <script>
+        function changeInstr() {
+          let instr = document.getElementById("instrument").value;
+          ChangeInstrument(instr);
+          return false;
+         }
+      </script>
       <h1 id='counter'></h1>
       <div id='cents'></div>
       <div id="myDiv"></div>
@@ -16,16 +23,17 @@
       <input type="button" onClick="ChangeState()" value="Change State">
       <input type="button" onClick="newNote()" value="New Note">
         
-       <form>
-          <label for="instrument">Choose an instrument:</label>
+       <form onsubmit="return changeInstr()" >>
+        <label for="instrument">Choose an instrument:</label>
           <select id="instrument" name="instruments">
-              <option value="piano">Piano</option>
-              <option value="percussion">Percussion</option>
-              <option value="strings">Strings</option>
-              <option value="winds">Winds</option>
-              <option value="brass">Brass</option>
+            <option value="piano">Piano</option>
+            <option value="voice">Voice</option>
+            <option value="percussion">Percussion</option>
+            <option value="strings">Strings</option>
+            <option value="winds">Winds</option>
+            <option value="brass">Brass</option>
           </select>
-          <input type="submit">
+        <input type="submit">
       </form>
 
       <div id="myDiv1"></div>
