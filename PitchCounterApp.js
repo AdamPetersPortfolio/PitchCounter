@@ -8,8 +8,8 @@
  */
 
 class PitchCounterApp {
-
     constructor(instr) {
+        this.stopped = true;
         this.instrument = new InstrumentListener(instr);
         this.get_pitch_count = function () {
             return this.instrument.get_pitch_count();
@@ -30,6 +30,7 @@ class PitchCounterApp {
      * to AudioContext limitations.
      */
     start() {
+        this.stopped = true;
         this.instrument.startListener();
     }
 
@@ -37,6 +38,7 @@ class PitchCounterApp {
      * Completely stop the app from listening.
      */
     stop() {
+        this.stopped = true;
         this.instrument.stopListener();
     }
 
@@ -44,6 +46,7 @@ class PitchCounterApp {
      * Pause the app from listening.
      */
      changeState() {
+        this.stopped = !this.stopped;
         return this.instrument.changeListenerState();
     }
 }
@@ -63,7 +66,12 @@ function ChangeState() {
 }
 
 function ChangeInstrument(instr) {
-    app.changeState();
-    app.change_instrument(instr);
-    app.changeState();
+    if (this.stopped) {
+        app.changeState();
+    }
+    else {
+        app.changeState();
+        app.change_instrument(instr);
+        app.changeState();
+    }
 }
