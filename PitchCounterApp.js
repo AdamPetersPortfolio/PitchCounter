@@ -27,7 +27,7 @@ class PitchCounterApp {
         } else {
             this.changeState();
             this.instrument.changeInstrument(instr)
-            this..changeState();
+            this.changeState();
         }
     }
 
