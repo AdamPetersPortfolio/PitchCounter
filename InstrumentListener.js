@@ -29,7 +29,6 @@ class InstrumentListener {
      * @param {instrument} the String name of the instrument
      */
     changeInstrument(instrument) {
-        console.log(instrument);
         if (instrument.toLowerCase() == "piano") this.initPiano();
         else if (instrument.toLowerCase() == "voice") this.initVoice();
         else if (instrument.toLowerCase() == "guitar") this.initGuitar();
