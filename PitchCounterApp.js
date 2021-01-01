@@ -63,7 +63,7 @@ function ChangeState() {
 }
 
 function ChangeInstrument(instr) {
-    app.change_instrument(instr);
     app.changeState();
+    app.change_instrument(instr);
     app.changeState();
 }
