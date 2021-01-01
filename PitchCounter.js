@@ -435,11 +435,11 @@ class PitchCounter {
                 this.analyzeWithMemory();
         }
         this.prev_peaks = this.final_peaks;
-        console.log(this.counter);
+        document.getElementById("counter").innerHTML = this.counter;
         this.updateFrequencyBars();
     }
 
-    /**
+    /*
      * If the frequencyBars are being used to visualize the sound,
      * then this function can be called to update those frequency bars.
      */
