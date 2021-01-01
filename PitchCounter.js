@@ -46,14 +46,14 @@ class PitchCounter {
      * peaks in the noisy frequency data
      */
     initD3Peaks() {
-        var ricker = d3_peaks.ricker;
-        var findPeaks = d3_peaks.findPeaks()
+//         var ricker = d3_peaks.ricker;
+        var fp = findPeaks()
             .kernel(ricker)
             .gapThreshold(.5)
             .minLineLength(2.5)
             .minSNR(this.snr)
             .widths([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-        return findPeaks;
+        return fp;
     }
 
     /**
