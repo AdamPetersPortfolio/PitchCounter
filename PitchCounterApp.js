@@ -61,3 +61,7 @@ function Stop() {
 function ChangeState() {
     app.changeState();
 }
+
+function ChangeInstrument(instr) {
+    app.change_instrument(instr);
+}
