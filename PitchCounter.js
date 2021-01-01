@@ -435,6 +435,8 @@ class PitchCounter {
                 this.analyzeWithMemory();
         }
         this.prev_peaks = this.final_peaks;
+        console.log(this.counter);
+        this.updateFrequencyBars();
     }
 
     /**
