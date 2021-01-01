@@ -18,7 +18,7 @@ class PitchCounter {
         this.framesOfQuiet = 0;
         this.lastPeakInNote = 0;
         this.prevAverageDecibels = -100;
-        this.frequencyBars = FrequencyBars;
+        this.frequencyBars = new FrequencyBars();
         //instrument dependent fields
         this.bufferSize = 512;          // A power of 2 between 256 and 4096.
                                         // The lower the bufferSize the
